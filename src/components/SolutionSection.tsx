@@ -1,56 +1,65 @@
-import { Zap, Eye, Users, Volume2 } from "lucide-react";
+import { Zap, Users, ArrowRight } from "lucide-react";
 
-const solutions = [
+const steps = [
   {
     icon: Zap,
-    title: "Proposez un plan rapidement",
-    description: "En quelques secondes, pas en 20 messages.",
-  },
-  {
-    icon: Eye,
-    title: "Voyez qui est dispo",
-    description: "Disponible, bientôt dispo, ou indisponible. C'est clair.",
+    title: "Propose un plan",
+    description: "En 10 secondes, pas en 10 messages.",
   },
   {
     icon: Users,
-    title: "Avancez sans tout le monde",
-    description: "Pas besoin d'attendre la réponse de chacun pour agir.",
+    title: "Vois qui est dispo",
+    description: "Dispo, bientôt dispo, ou pas dispo. C'est clair.",
   },
   {
-    icon: Volume2,
-    title: "Moins de bruit",
-    description: "Fini les fils de discussion qui partent dans tous les sens.",
+    icon: ArrowRight,
+    title: "Avancez ensemble",
+    description: "Plus besoin d'attendre tout le monde pour décider.",
   },
 ];
 
 const SolutionSection = () => {
   return (
-    <section className="section-spacing bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent">
-      <div className="container-wide">
-        <h2 className="section-title text-center mb-4">
-          Une approche simple
-        </h2>
-        <p className="section-subtitle text-center max-w-lg mx-auto mb-16">
-          Synoutt simplifie l'organisation sans remplacer vos conversations.
-        </p>
+    <section className="section-spacing">
+      <div className="container-narrow">
+        <div className="text-center mb-14">
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">La solution</span>
+          <h2 className="section-title mt-3">
+            Synoutt, c'est <span className="text-accent">simple</span>.
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {solutions.map((solution, index) => (
-            <div
-              key={index}
-              className="group p-8 rounded-2xl glass-card transition-all duration-300 hover:border-primary/30 hover:glow-primary"
-            >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
-                <solution.icon className="w-7 h-7 text-primary" />
+        <div className="relative">
+          {/* Connection line */}
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-primary/30 to-transparent hidden md:block" />
+
+          <div className="space-y-8">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="relative flex items-start gap-6 p-6 rounded-2xl bg-card/30 border border-border/50 hover:bg-card/50 transition-all group"
+              >
+                {/* Step number */}
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 border border-accent/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <step.icon className="w-7 h-7 text-accent" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center">
+                    {index + 1}
+                  </div>
+                </div>
+                
+                <div className="pt-2">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">
-                {solution.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {solution.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

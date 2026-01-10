@@ -1,87 +1,100 @@
 import { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     
-    setIsLoading(true);
-    // Simulate submission
+    setIsSubmitting(true);
     setTimeout(() => {
+      setIsSubmitting(false);
       setIsSubmitted(true);
-      setIsLoading(false);
+      setEmail("");
     }, 1000);
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-      
-      <div className="container-narrow relative z-10 text-center py-24">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8 animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-          <span className="text-sm text-secondary-foreground">Bêta privée — accès progressif</span>
-        </div>
+    <section className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-12 overflow-hidden">
+      {/* Gradient orbs background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1s" }} />
+      </div>
 
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          Organisez vos sorties
-          <br />
-          <span className="text-gradient-primary">sans perdre de temps</span>
-        </h1>
+      <div className="container-narrow relative z-10">
+        <div className="flex flex-col items-center text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8 animate-fade-in">
+            <Sparkles className="w-4 h-4 text-accent" />
+            <span className="text-sm font-medium text-accent">Bientôt disponible</span>
+          </div>
 
-        {/* Subheadline */}
-        <p className="section-subtitle max-w-xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Proposez un plan en quelques secondes et voyez instantanément qui est disponible.
-        </p>
+          {/* Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            Moins de blabla,<br />
+            <span className="text-accent">plus de sorties.</span>
+          </h1>
 
-        {/* Email Form */}
-        <div className="max-w-md mx-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            Propose un plan, vois qui est dispo, et sortez. C'est tout.
+          </p>
+
+          {/* CTA Form */}
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Votre email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="input-field flex-1"
-              />
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="btn-cta whitespace-nowrap"
-              >
-                {isLoading ? (
-                  <span className="w-5 h-5 border-2 border-accent-foreground/30 border-t-accent-foreground rounded-full animate-spin" />
-                ) : (
-                  <>
-                    Rejoindre la bêta
-                    <ArrowRight className="w-5 h-5" />
-                  </>
-                )}
-              </button>
+            <form onSubmit={handleSubmit} className="w-full max-w-sm animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Ton email"
+                  className="flex-1 input-field text-center sm:text-left"
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-cta group whitespace-nowrap"
+                >
+                  {isSubmitting ? (
+                    <span className="animate-pulse">...</span>
+                  ) : (
+                    <>
+                      Rejoindre
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Bêta fermée — accès progressif 🔒
+              </p>
             </form>
           ) : (
-            <div className="flex items-center justify-center gap-3 py-4 px-6 rounded-xl bg-primary/10 border border-primary/20">
-              <Check className="w-5 h-5 text-primary" />
-              <span className="text-foreground">Vous êtes sur la liste. On vous contacte bientôt.</span>
+            <div className="text-center animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-accent/10 border border-accent/30">
+                <span className="text-2xl">🎉</span>
+                <span className="text-accent font-medium">T'es sur la liste !</span>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                On te contacte bientôt.
+              </p>
             </div>
           )}
         </div>
+      </div>
 
-        {/* Trust text */}
-        <p className="text-sm text-muted-foreground mt-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          Aucun spam. Juste un accès anticipé à Synoutt.
-        </p>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+        </div>
       </div>
     </section>
   );
