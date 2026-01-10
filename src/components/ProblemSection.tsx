@@ -1,46 +1,53 @@
-import { MessageCircle, Clock, HelpCircle, XCircle } from "lucide-react";
+import { MessageCircle, Clock, HelpCircle, X } from "lucide-react";
 
 const problems = [
   {
     icon: MessageCircle,
-    text: "Discussions interminables",
+    text: "Discussion qui tourne en rond",
+    subtext: "\"Qui vient ?\" \"On fait quoi ?\" \"À quelle heure ?\"",
   },
   {
     icon: Clock,
-    text: "Réponses tardives ou absentes",
+    text: "Réponses qui arrivent jamais",
+    subtext: "Trois jours pour savoir qui est dispo",
   },
   {
     icon: HelpCircle,
-    text: "Indécision collective",
+    text: "Personne qui décide",
+    subtext: "\"Moi je suis chaud si vous êtes chauds\"",
   },
   {
-    icon: XCircle,
-    text: "Plans annulés faute de clarté",
+    icon: X,
+    text: "Plan annulé",
+    subtext: "...après 50 messages",
   },
 ];
 
 const ProblemSection = () => {
   return (
-    <section className="section-spacing">
+    <section className="section-spacing bg-muted/30">
       <div className="container-narrow">
-        <h2 className="section-title text-center mb-4">
-          Un problème familier
-        </h2>
-        <p className="section-subtitle text-center max-w-lg mx-auto mb-16">
-          Organiser une sortie entre potes ne devrait pas être aussi compliqué.
-        </p>
+        <div className="text-center mb-12">
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">Le problème</span>
+          <h2 className="section-title mt-3">
+            Organiser une sortie,<br />
+            <span className="text-muted-foreground">c'est devenu un taf.</span>
+          </h2>
+        </div>
 
-        <div className="grid gap-4 md:gap-6">
+        <div className="grid gap-4 max-w-lg mx-auto">
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex items-center gap-5 p-5 md:p-6 rounded-2xl glass-card transition-all duration-300 hover:border-primary/30"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="flex items-start gap-4 p-5 rounded-2xl bg-card/50 border border-border/50 hover:border-accent/30 transition-colors group"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <problem.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                <problem.icon className="w-5 h-5 text-accent" />
               </div>
-              <span className="text-lg md:text-xl text-foreground">{problem.text}</span>
+              <div>
+                <p className="font-medium text-foreground">{problem.text}</p>
+                <p className="text-sm text-muted-foreground mt-1">{problem.subtext}</p>
+              </div>
             </div>
           ))}
         </div>
