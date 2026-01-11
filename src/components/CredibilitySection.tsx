@@ -15,7 +15,7 @@ const CredibilitySection = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10">
-            Synoutt est pensé avec des lycéens et étudiants.
+            WeOut est pensé avec des lycéens et étudiants.
             Pas dans une tour d'ivoire, mais avec ceux qui galèrent vraiment à organiser leurs sorties.
           </p>
 

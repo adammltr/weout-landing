@@ -27,14 +27,14 @@ const Merci = () => {
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Tu fais partie des premiers à tester Synoutt.<br />
+          Tu fais partie des premiers à tester WeOut.<br />
           On te prévient dès que c'est prêt.
         </p>
 
         {/* Discord CTA */}
         <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <a
-            href={https://discord.gg/Uqjt6N5A}
+            href="https://discord.com/invite/Uqjt6N5A"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta group inline-flex items-center gap-2"

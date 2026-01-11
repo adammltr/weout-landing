@@ -25,7 +25,7 @@ const SolutionSection = () => {
         <div className="text-center mb-14">
           <span className="text-accent font-medium text-sm uppercase tracking-wider">La solution</span>
           <h2 className="section-title mt-3">
-            Synoutt, c'est <span className="text-accent">simple</span>.
+            WeOut, c'est <span className="text-accent">simple</span>.
           </h2>
         </div>
 
