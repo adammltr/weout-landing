@@ -34,7 +34,7 @@ const Merci = () => {
         {/* Discord CTA */}
         <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <a
-            href={DISCORD_INVITE_LINK}
+            href={https://discord.gg/Uqjt6N5A}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta group inline-flex items-center gap-2"
