@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, MessageCircle } from "lucide-react";
 
 // Lien Discord modifiable facilement
-const DISCORD_INVITE_LINK = "https://discord.gg/votre-lien-discord";
+const DISCORD_INVITE_LINK = "https://discord.gg/Uqjt6N5A";
 
 const Merci = () => {
   return (
