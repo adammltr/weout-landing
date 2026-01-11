@@ -1,22 +1,8 @@
-import { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useBetaSignup } from "@/hooks/useBetaSignup";
 
 const HeroSection = () => {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setEmail("");
-    }, 1000);
-  };
+  const { email, setEmail, isSubmitting, error, handleSubmit } = useBetaSignup();
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-12 overflow-hidden">
@@ -46,47 +32,38 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Form */}
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="w-full max-w-sm animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Ton email"
-                  className="flex-1 input-field text-center sm:text-left"
-                  required
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-cta group whitespace-nowrap"
-                >
-                  {isSubmitting ? (
-                    <span className="animate-pulse">...</span>
-                  ) : (
-                    <>
-                      Rejoindre
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </button>
-              </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Bêta fermée — accès progressif 🔒
-              </p>
-            </form>
-          ) : (
-            <div className="text-center animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-accent/10 border border-accent/30">
-                <span className="text-2xl">🎉</span>
-                <span className="text-accent font-medium">T'es sur la liste !</span>
-              </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                On te contacte bientôt.
-              </p>
+          <form onSubmit={handleSubmit} className="w-full max-w-sm animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Ton email"
+                className="flex-1 input-field text-center sm:text-left"
+                required
+              />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-cta group whitespace-nowrap"
+              >
+                {isSubmitting ? (
+                  <span className="animate-pulse">...</span>
+                ) : (
+                  <>
+                    Rejoindre
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
+              </button>
             </div>
-          )}
+            {error && (
+              <p className="text-xs text-red-400 mt-2">{error}</p>
+            )}
+            <p className="text-xs text-muted-foreground mt-4">
+              Bêta fermée — accès progressif 🔒
+            </p>
+          </form>
         </div>
       </div>
 
