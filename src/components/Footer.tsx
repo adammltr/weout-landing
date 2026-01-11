@@ -6,9 +6,9 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
+              <span className="text-white font-bold text-sm">W</span>
             </div>
-            <span className="text-lg font-semibold text-foreground">Synoutt</span>
+            <span className="text-lg font-semibold text-foreground">WeOut</span>
           </div>
 
           {/* Status */}
@@ -19,17 +19,17 @@ const Footer = () => {
 
           {/* Contact */}
           <a 
-            href="mailto:hello@synoutt.com" 
+            href="mailto:contact.weout@gmail.com" 
             className="text-sm text-muted-foreground hover:text-accent transition-colors"
           >
-            hello@synoutt.com
+            contact.weout@gmail.com
           </a>
         </div>
 
         <div className="mt-10 pt-6 border-t border-border/20 text-center">
-          <p className="text-xs text-text-tertiary">
-            © {new Date().getFullYear()} Synoutt. Tous droits réservés.
-          </p>
+        <p className="text-xs text-text-tertiary">
+          © {new Date().getFullYear()} WeOut. Tous droits réservés.
+        </p>
         </div>
       </div>
     </footer>

@@ -23,10 +23,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
+              <span className="text-white font-bold text-sm">W</span>
             </div>
             <span className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-              Synoutt
+              WeOut
             </span>
           </a>
 

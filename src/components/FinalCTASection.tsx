@@ -21,7 +21,7 @@ const FinalCTASection = () => {
           </h2>
           
           <p className="text-muted-foreground text-lg max-w-sm mx-auto mb-10">
-            Rejoins la bêta et fais partie des premiers à tester Synoutt.
+            Rejoins la bêta et fais partie des premiers à tester WeOut.
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
