@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import weoutLogo from "@/assets/weout-logo.png";
 
-const AMBASSADEUR_FORM_LINK = "https://forms.google.com/ambassadeur-weout";
+const AMBASSADEUR_FORM_LINK = "https://tally.so/r/RGooB9";
 
 const faqItems = [
   {
