@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
-import weoutLogo from "@/assets/weout-logo.png";
+import weoutLogo from "@/assets/weout-logo-1.png";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
