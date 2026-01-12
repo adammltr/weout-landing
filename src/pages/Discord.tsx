@@ -1,6 +1,6 @@
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import weoutLogo from "@/assets/weout-logo.png";
+import weoutLogo from "@/assets/weout-logo-1.png";
 
 const DISCORD_INVITE_LINK = "https://discord.com/invite/Uqjt6N5A";
 

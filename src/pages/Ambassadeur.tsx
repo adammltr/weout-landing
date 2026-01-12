@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import weoutLogo from "@/assets/weout-logo.png";
+import weoutLogo from "@/assets/weout-logo-1.png";
 
 const AMBASSADEUR_FORM_LINK = "https://tally.so/r/RGooB9";
 
