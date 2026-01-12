@@ -1,3 +1,5 @@
+import weoutLogo from "@/assets/weout-logo-1.png";
+
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-border/30">
@@ -5,9 +7,11 @@ const Footer = () => {
         <div className="flex flex-col items-center text-center gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">W</span>
-            </div>
+            <img
+              src={weoutLogo}
+              alt="WeOut"
+              className="w-8 h-8 rounded-xl"
+            />
             <span className="text-lg font-semibold text-foreground">WeOut</span>
           </div>
 
