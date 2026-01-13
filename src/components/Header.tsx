@@ -57,10 +57,10 @@ const Header = () => {
             </Link>
             <Link
               to="/ambassadeur"
-              className="hidden sm:flex items-center gap-2 text-base text-muted-foreground hover:text-accent transition-colors"
+              className="hidden sm:flex items-center gap-2 px-5 py-2.5 text-base text-muted-foreground hover:text-accent transition-colors"
             >
               <Heart className="w-5 h-5 text-accent" />
-              <span className="font-medium">Ambassadeur</span>
+              <span className="font-semibold">Ambassadeur</span>
             </Link>
           </div>
 
