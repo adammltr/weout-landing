@@ -57,9 +57,9 @@ const Header = () => {
             </Link>
             <Link
               to="/ambassadeur"
-              className="hidden sm:flex items-center gap-2 px-5 py-2.5 text-base text-muted-foreground hover:text-accent transition-colors"
+              className="hidden sm:flex items-center gap-2.5 text-lg text-muted-foreground hover:text-accent transition-colors"
             >
-              <Heart className="w-5 h-5 text-accent" />
+              <Heart className="w-6 h-6 text-accent" />
               <span className="font-semibold">Ambassadeur</span>
             </Link>
           </div>
