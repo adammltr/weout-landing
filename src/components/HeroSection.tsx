@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Smartphone } from "lucide-react";
 import { useBetaSignup } from "@/hooks/useBetaSignup";
 
 const HeroSection = () => {
@@ -32,9 +32,15 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Propose un plan, vois qui est dispo, et sortez. C'est tout.
           </p>
+
+          {/* Mobile app indicator - subtle and premium */}
+          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/60 mb-10 animate-fade-in" style={{ animationDelay: "0.25s" }}>
+            <Smartphone className="w-3 h-3" strokeWidth={1.5} />
+            <span className="tracking-wide">Application mobile</span>
+          </div>
 
           {/* CTA Form */}
           <form onSubmit={handleSubmit} className="w-full max-w-sm animate-fade-in" style={{ animationDelay: "0.3s" }}>
