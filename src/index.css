@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* SAFARI FIX: Removed @import for fonts - now loaded via preload in index.html 
+   This prevents render-blocking and FOUC on Safari */
 
 @tailwind base;
 @tailwind components;
@@ -61,11 +62,20 @@
 
   html {
     scroll-behavior: smooth;
+    /* SAFARI FIX: Ensure proper text rendering on WebKit */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    /* SAFARI FIX: Prevent layout shift from font loading */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    /* SAFARI FIX: Force GPU acceleration for smoother rendering */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
 

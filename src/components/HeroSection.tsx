@@ -6,10 +6,16 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-12 overflow-hidden">
-      {/* Gradient orbs background */}
+      {/* Gradient orbs background - SAFARI FIX: will-change for GPU acceleration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1s" }} />
+        <div 
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" 
+          style={{ willChange: 'opacity' }}
+        />
+        <div 
+          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[100px] animate-pulse-glow" 
+          style={{ animationDelay: "1s", willChange: 'opacity' }} 
+        />
       </div>
 
       <div className="container-narrow relative z-10">
