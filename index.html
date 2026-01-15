@@ -3,6 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SAFARI FIX: Force immediate color scheme to prevent FOUC -->
+    <meta name="color-scheme" content="dark" />
+    
+    <!-- SAFARI FIX: Critical inline styles to prevent flash of wrong colors -->
+    <style>
+      html, body, #root {
+        background-color: hsl(250 15% 6%);
+        color: hsl(0 0% 98%);
+      }
+      /* Prevent invisible text while font loads (FOIT) */
+      html {
+        font-display: swap;
+      }
+    </style>
+    
+    <!-- SAFARI FIX: Preconnect to Google Fonts for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- SAFARI FIX: Preload Inter font with display=swap to prevent FOUT -->
+    <link 
+      rel="preload" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+      as="style"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <!-- Fallback for browsers without JS -->
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
+    
     <title>WeOut — Organisez vos sorties sans perdre de temps</title>
     <meta name="description" content="Proposez un plan en quelques secondes et voyez instantanément qui est disponible. Rejoignez la bêta privée de WeOut." />
     <meta name="author" content="WeOut" />
