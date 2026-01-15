@@ -36,10 +36,10 @@ const HeroSection = () => {
             Propose un plan, vois qui est dispo, et sortez. C'est tout.
           </p>
 
-          {/* Mobile app indicator - subtle and premium */}
-          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/60 mb-10 animate-fade-in" style={{ animationDelay: "0.25s" }}>
-            <Smartphone className="w-3 h-3" strokeWidth={1.5} />
-            <span className="tracking-wide">Application mobile</span>
+          {/* Mobile app indicator - visible but elegant */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-10 animate-fade-in" style={{ animationDelay: "0.25s" }}>
+            <Smartphone className="w-4 h-4 text-accent" strokeWidth={2} />
+            <span className="text-sm text-foreground/80 font-medium">Bêta v1 sur iOS</span>
           </div>
 
           {/* CTA Form */}
