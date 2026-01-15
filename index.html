@@ -23,22 +23,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- SAFARI FIX: Preload Inter font with display=swap to prevent FOUT -->
-    <link 
-      rel="preload" 
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
-      as="style"
-    />
+    <!-- SAFARI FIX: Direct stylesheet load with display=swap
+         The media="print" hack causes FOIT on Safari because WebKit
+         doesn't handle the media switch smoothly. Direct load with
+         display=swap is safer and Google Fonts handles caching well. -->
     <link 
       rel="stylesheet" 
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
     />
-    <!-- Fallback for browsers without JS -->
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-    </noscript>
     
     <title>WeOut — Organisez vos sorties sans perdre de temps</title>
     <meta name="description" content="Proposez un plan en quelques secondes et voyez instantanément qui est disponible. Rejoignez la bêta privée de WeOut." />
