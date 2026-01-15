@@ -6,15 +6,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-12 overflow-hidden">
-      {/* Gradient orbs background - SAFARI FIX: will-change for GPU acceleration */}
+      {/* Gradient orbs background
+           SAFARI FIX: Removed willChange which was causing excessive GPU layer creation.
+           Safari handles blur filters better without forced layer promotion. */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" 
-          style={{ willChange: 'opacity' }}
-        />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
         <div 
           className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[100px] animate-pulse-glow" 
-          style={{ animationDelay: "1s", willChange: 'opacity' }} 
+          style={{ animationDelay: "1s" }} 
         />
       </div>
 
