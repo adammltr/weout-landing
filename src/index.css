@@ -73,9 +73,6 @@
     /* SAFARI FIX: Prevent layout shift from font loading */
     font-synthesis: none;
     text-rendering: optimizeLegibility;
-    /* SAFARI FIX: Force GPU acceleration for smoother rendering */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
   }
 }
 
