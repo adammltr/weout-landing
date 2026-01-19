@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useBetaSignup } from "@/hooks/useBetaSignup";
 
 const FinalCTASection = () => {
@@ -6,26 +6,28 @@ const FinalCTASection = () => {
 
   return (
     <section className="section-spacing relative overflow-hidden">
-      {/* Background gradient */}
+      {/* Rich background with gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-accent/10 to-primary/10 blur-[150px]" />
       
-      <div className="container-narrow relative">
+      <div className="container-narrow relative z-10">
         <div className="text-center">
-          {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 border border-accent/30 mb-8">
-            <Sparkles className="w-8 h-8 text-accent" />
+          {/* Visual element instead of icon */}
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-accent/20 to-primary/20 border border-accent/30 mb-10">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/60" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-5">
             Rejoins la bêta <span className="text-accent">avant tout le monde</span>.
           </h2>
           
-          <p className="text-muted-foreground text-lg max-w-md mx-auto mb-3">
+          <p className="text-muted-foreground text-lg max-w-md mx-auto mb-4 leading-relaxed">
             Accès limité. On ouvre progressivement pour garder une vraie expérience.
           </p>
           
-          <p className="text-sm text-accent/80 mb-8">
-            ✨ Premiers testeurs = premiers à influencer le produit
+          <p className="text-sm text-foreground/70 mb-10 flex items-center justify-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+            Premiers testeurs = premiers à influencer le produit
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
@@ -57,8 +59,8 @@ const FinalCTASection = () => {
             {error && (
               <p className="text-xs text-red-400 mt-2">{error}</p>
             )}
-            <p className="text-xs text-muted-foreground mt-4">
-              Pas de spam. Tu reçois juste ton accès quand c'est prêt. 🤙
+            <p className="text-xs text-muted-foreground mt-5">
+              Pas de spam. Tu reçois juste ton accès quand c'est prêt.
             </p>
           </form>
         </div>

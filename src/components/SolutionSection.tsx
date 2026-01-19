@@ -1,19 +1,16 @@
 const steps = [
   {
     number: "01",
-    emoji: "✋",
     title: "Tu déclares une envie",
     description: "\"Chaud ciné ce soir\" — en 5 secondes, c'est posté.",
   },
   {
     number: "02",
-    emoji: "👀",
     title: "Tu vois qui est partant",
-    description: "Tes potes répondent. Tu sais qui vient avant d'y aller.",
+    description: "Tes amis ou des gens proches répondent. Tu sais qui vient avant d'y aller.",
   },
   {
     number: "03",
-    emoji: "🚀",
     title: "Tu rejoins sans awkwardness",
     description: "Petit groupe, intention claire. Zéro malaise.",
   },
@@ -21,39 +18,44 @@ const steps = [
 
 const SolutionSection = () => {
   return (
-    <section className="section-spacing">
-      <div className="container-narrow">
+    <section className="section-spacing relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
+      </div>
+      
+      <div className="container-narrow relative z-10">
         <div className="text-center mb-14">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">Comment ça marche</span>
-          <h2 className="section-title mt-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-4">
+            Comment ça marche
+          </span>
+          <h2 className="section-title">
             3 étapes. <span className="text-accent">C'est tout.</span>
           </h2>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex items-center gap-6 p-6 rounded-2xl bg-card/30 border border-border/50 hover:bg-card/50 transition-all group"
+              className="relative flex items-start gap-6 p-7 rounded-2xl bg-gradient-to-r from-card/60 to-card/30 border border-border/40 hover:border-accent/30 transition-all group"
             >
-              {/* Step number */}
-              <div className="hidden sm:flex w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 border border-accent/30 items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                <span className="text-2xl">{step.emoji}</span>
+              {/* Step number with gradient background */}
+              <div className="hidden sm:flex w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 border border-accent/20 items-center justify-center shrink-0 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
+                <span className="text-lg font-bold text-accent">{step.number}</span>
               </div>
               
-              {/* Mobile emoji */}
-              <div className="sm:hidden w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 text-xl">
-                {step.emoji}
+              {/* Mobile number */}
+              <div className="sm:hidden w-12 h-12 rounded-xl bg-gradient-to-br from-accent/15 to-primary/15 flex items-center justify-center shrink-0">
+                <span className="text-sm font-bold text-accent">{step.number}</span>
               </div>
               
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-1">
-                  <span className="text-xs font-mono text-accent/60">{step.number}</span>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {step.title}
-                  </h3>
-                </div>
-                <p className="text-muted-foreground text-sm sm:text-base">
+              <div className="flex-1 pt-1">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   {step.description}
                 </p>
               </div>

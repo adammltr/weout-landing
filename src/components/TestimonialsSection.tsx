@@ -4,32 +4,32 @@ const testimonials = [
   {
     name: "Léa",
     age: 21,
-    emoji: "🎓",
-    text: "Ça m'a permis de sortir sans envoyer 15 messages dans le groupe.",
+    text: "Ça évite les messages gênants dans le groupe. Tu sais direct qui est chaud.",
   },
   {
     name: "Thomas",
     age: 19,
-    emoji: "🏀",
-    text: "Enfin une app sociale sans malaise.",
+    text: "J'ai trouvé des gens chauds pour sortir sans forcer. Simple.",
   },
   {
     name: "Inès",
     age: 22,
-    emoji: "✨",
-    text: "Simple, privé, efficace. J'attends le lancement public.",
+    text: "Enfin une app sociale sans malaise. J'attends le lancement public.",
   },
   {
     name: "Mathis",
     age: 20,
-    emoji: "🎮",
     text: "Je découvre des plans que j'aurais jamais connu sinon.",
   },
   {
     name: "Chloé",
     age: 23,
-    emoji: "☕",
-    text: "Je viens d'arriver à Lyon. WeOut m'a sauvé la vie sociale.",
+    text: "Nouvelle dans ma ville. WeOut m'a aidé à rencontrer du monde.",
+  },
+  {
+    name: "Lucas",
+    age: 18,
+    text: "Plus besoin d'attendre que quelqu'un propose. Tu proposes, point.",
   },
 ];
 
@@ -42,12 +42,11 @@ const TestimonialsSection = () => {
 
     let animationFrameId: number;
     let scrollPosition = 0;
-    const speed = 0.5;
+    const speed = 0.4;
 
     const scroll = () => {
       scrollPosition += speed;
       
-      // Reset when reaching the middle (where duplicates start)
       if (scrollPosition >= scrollContainer.scrollWidth / 2) {
         scrollPosition = 0;
       }
@@ -58,7 +57,6 @@ const TestimonialsSection = () => {
 
     animationFrameId = requestAnimationFrame(scroll);
 
-    // Pause on hover
     const handleMouseEnter = () => cancelAnimationFrame(animationFrameId);
     const handleMouseLeave = () => {
       animationFrameId = requestAnimationFrame(scroll);
@@ -74,41 +72,49 @@ const TestimonialsSection = () => {
     };
   }, []);
 
-  // Duplicate testimonials for seamless loop
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section className="section-spacing overflow-hidden bg-muted/30">
-      <div className="container-narrow mb-10">
+    <section className="section-spacing overflow-hidden relative">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/40 via-muted/20 to-background pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-accent/5 blur-[150px]" />
+      
+      <div className="container-narrow mb-12 relative z-10">
         <div className="text-center">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">Retours bêta</span>
-          <h2 className="section-title mt-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-4">
+            Retours bêta
+          </span>
+          <h2 className="section-title">
             Ils testent <span className="text-accent">WeOut</span>.
           </h2>
         </div>
       </div>
 
-      {/* Horizontal scrolling carousel */}
+      {/* Horizontal scrolling carousel - larger cards */}
       <div 
         ref={scrollRef}
-        className="flex gap-4 overflow-x-hidden px-6 cursor-grab"
+        className="flex gap-5 overflow-x-hidden px-6 cursor-grab relative z-10"
         style={{ scrollBehavior: "auto" }}
       >
         {duplicatedTestimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-72 p-5 rounded-2xl bg-card/50 border border-border/50"
+            className="flex-shrink-0 w-80 p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/40 backdrop-blur-sm"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-lg">
-                {testimonial.emoji}
+            <div className="flex items-center gap-4 mb-5">
+              {/* Avatar placeholder - gradient circle */}
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 border border-border/50 flex items-center justify-center">
+                <span className="text-sm font-semibold text-foreground/80">
+                  {testimonial.name.charAt(0)}
+                </span>
               </div>
               <div>
-                <p className="font-medium text-foreground text-sm">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">{testimonial.age} ans</p>
+                <p className="font-medium text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.age} ans</p>
               </div>
             </div>
-            <p className="text-sm text-foreground/90 leading-relaxed">
+            <p className="text-foreground/90 leading-relaxed">
               "{testimonial.text}"
             </p>
           </div>
