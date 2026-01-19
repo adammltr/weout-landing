@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Smartphone } from "lucide-react";
+import { ArrowRight, Smartphone } from "lucide-react";
 import { useBetaSignup } from "@/hooks/useBetaSignup";
 
 const HeroSection = () => {
@@ -6,9 +6,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-12 overflow-hidden">
-      {/* Gradient orbs background
-           SAFARI FIX: Removed willChange which was causing excessive GPU layer creation.
-           Safari handles blur filters better without forced layer promotion. */}
+      {/* Gradient orbs background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
         <div 
@@ -19,24 +17,24 @@ const HeroSection = () => {
 
       <div className="container-narrow relative z-10">
         <div className="flex flex-col items-center text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">Bientôt disponible</span>
+          {/* Promise Badge - Safari search bar style */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6 animate-fade-in">
+            <span className="text-sm font-medium text-accent">L'app pour ceux qui veulent vraiment sortir</span>
           </div>
 
-          {/* Headline */}
+          {/* Headline - Clear, result-oriented */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Moins de blabla,<br />
-            <span className="text-accent">plus de sorties.</span>
+            Propose. Vois qui vient.<br />
+            <span className="text-accent">Sortez.</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Propose un plan, vois qui est dispo, et sortez. C'est tout.
+          {/* Subheadline - Who, problem, solution */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            Tu viens d'arriver quelque part ou t'en as marre de sortir toujours avec les mêmes ?
+            WeOut te montre qui est chaud, sans galère.
           </p>
 
-          {/* Mobile app indicator - visible but elegant */}
+          {/* Mobile app indicator */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-10 animate-fade-in" style={{ animationDelay: "0.25s" }}>
             <Smartphone className="w-4 h-4 text-accent" strokeWidth={2} />
             <span className="text-sm text-foreground/80 font-medium">Bêta v1 sur iOS</span>
@@ -62,7 +60,7 @@ const HeroSection = () => {
                   <span className="animate-pulse">...</span>
                 ) : (
                   <>
-                    Rejoindre
+                    Accès early
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
@@ -71,13 +69,13 @@ const HeroSection = () => {
             {error && (
               <p className="text-xs text-red-400 mt-2">{error}</p>
             )}
+            {/* Micro social proof - honest */}
             <p className="text-xs text-muted-foreground mt-4">
-              Bêta fermée — accès progressif 🔒
+              🔒 Bêta privée — premiers testeurs en cours
             </p>
           </form>
         </div>
       </div>
-
     </section>
   );
 };

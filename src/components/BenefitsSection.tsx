@@ -1,40 +1,38 @@
-import { Clock, Smile, Heart, Sparkles } from "lucide-react";
-
 const benefits = [
   {
-    icon: Clock,
-    title: "Moins de temps perdu",
-    description: "Fini les discussions interminables.",
+    emoji: "🔒",
+    title: "Privé, pas public",
+    description: "Tes sorties restent entre vous. Pas de feed public, pas de malaise.",
   },
   {
-    icon: Smile,
-    title: "Plus de sorties",
-    description: "Des plans qui aboutissent vraiment.",
+    emoji: "👥",
+    title: "Petits groupes",
+    description: "5-10 personnes max. Qualité > quantité.",
   },
   {
-    icon: Heart,
-    title: "Moins de friction",
-    description: "Entre vous et vos potes.",
+    emoji: "🎯",
+    title: "Par intention",
+    description: "Tu rejoins parce que t'es vraiment chaud, pas par politesse.",
   },
   {
-    icon: Sparkles,
-    title: "Plus de spontanéité",
-    description: "Décidez vite, profitez plus.",
+    emoji: "⚡",
+    title: "Contrôle total",
+    description: "C'est toi qui décides avec qui et quand.",
   },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="section-spacing bg-muted/30">
+    <section className="section-spacing">
       <div className="container-narrow">
         <div className="text-center mb-12">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">Les bénéfices</span>
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">Pourquoi WeOut</span>
           <h2 className="section-title mt-3">
-            Ce que ça <span className="text-accent">change</span>.
+            Social, mais <span className="text-accent">à ta façon</span>.
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -44,8 +42,8 @@ const BenefitsSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <benefit.icon className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors text-2xl">
+                  {benefit.emoji}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {benefit.title}

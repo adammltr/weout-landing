@@ -1,25 +1,23 @@
-import { MessageCircle, Clock, HelpCircle, X } from "lucide-react";
-
 const problems = [
   {
-    icon: MessageCircle,
-    text: "Discussion qui tourne en rond",
-    subtext: "\"Qui vient ?\" \"On fait quoi ?\" \"À quelle heure ?\"",
+    emoji: "🔄",
+    text: "Toujours les mêmes",
+    subtext: "Tu sors qu'avec ton groupe de base, même si t'aimerais varier",
   },
   {
-    icon: Clock,
-    text: "Réponses qui arrivent jamais",
-    subtext: "Trois jours pour savoir qui est dispo",
+    emoji: "👻",
+    text: "Personne répond",
+    subtext: "T'envoies un message, silence radio pendant 3 jours",
   },
   {
-    icon: HelpCircle,
-    text: "Personne qui décide",
-    subtext: "\"Moi je suis chaud si vous êtes chauds\"",
+    emoji: "💀",
+    text: "Groupes WhatsApp morts",
+    subtext: "200 messages pour un plan qui capote",
   },
   {
-    icon: X,
-    text: "Plan annulé",
-    subtext: "...après 50 messages",
+    emoji: "📱",
+    text: "Stories passives",
+    subtext: "Tu vois les autres sortir, mais t'es jamais invité",
   },
 ];
 
@@ -30,19 +28,19 @@ const ProblemSection = () => {
         <div className="text-center mb-12">
           <span className="text-accent font-medium text-sm uppercase tracking-wider">Le problème</span>
           <h2 className="section-title mt-3">
-            Organiser une sortie,<br />
-            <span className="text-muted-foreground">c'est devenu un taf.</span>
+            Sortir devrait pas être<br />
+            <span className="text-muted-foreground">aussi compliqué.</span>
           </h2>
         </div>
 
-        <div className="grid gap-4 max-w-lg mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
           {problems.map((problem, index) => (
             <div
               key={index}
               className="flex items-start gap-4 p-5 rounded-2xl bg-card/50 border border-border/50 hover:border-accent/30 transition-colors group"
             >
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                <problem.icon className="w-5 h-5 text-accent" />
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors text-2xl">
+                {problem.emoji}
               </div>
               <div>
                 <p className="font-medium text-foreground">{problem.text}</p>
