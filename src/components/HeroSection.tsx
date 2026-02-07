@@ -20,20 +20,20 @@ const HeroSection = () => {
           {/* Promise Badge - Safari search bar style */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/15 to-primary/15 border border-accent/25 mb-8 animate-fade-in backdrop-blur-sm">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm font-medium text-foreground/90">Sorties proches, rencontres vraies</span>
+            <span className="text-sm font-medium text-foreground/90">Organise tes sorties simplement</span>
           </div>
 
           {/* Headline - Balanced, emotional, clear */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Trouve des gens chauds<br />
-            <span className="text-accent">pour sortir ce soir.</span>
+            Organise des sorties<br />
+            <span className="text-accent">sans prise de tête.</span>
           </h1>
 
           {/* Subheadline - Who, problem, solution */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-            Nouveau quelque part ? Marre de sortir seul ou toujours avec les mêmes ?
+            Crée des plans entre amis en quelques secondes, où que tu sois.
             <br className="hidden sm:block" />
-            WeOut te connecte à des sorties près de toi, avec des gens qui veulent vraiment y aller.
+            <span className="text-foreground/70">Fonctionnalités de découverte en test à Caen — bientôt dans ta ville.</span>
           </p>
 
           {/* Discord CTA Button */}
