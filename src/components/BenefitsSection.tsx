@@ -1,27 +1,31 @@
 const benefits = [
   {
-    title: "Sorties proches de toi",
-    description: "Découvre ce qui se passe autour, sans scroller pendant des heures.",
+    title: "Plans privés, partout",
+    description: "Crée des sorties entre amis où que tu sois. Simple, rapide, sans friction.",
     gradient: "from-accent/15 via-accent/5 to-transparent",
     size: "lg",
+    badge: "Disponible partout",
   },
   {
     title: "Visibilité configurable",
-    description: "Tu contrôles qui voit quoi. Amis proches, cercle élargi, ou sorties ouvertes.",
+    description: "Tu contrôles qui voit quoi. Amis proches uniquement, ou cercle élargi.",
     gradient: "from-primary/15 via-primary/5 to-transparent",
     size: "sm",
+    badge: "Disponible partout",
   },
   {
-    title: "Rencontres encadrées",
-    description: "Rencontre de nouvelles personnes, mais avec des filtres et des règles claires.",
+    title: "Découvre des plans autour de toi",
+    description: "Explore les sorties semi-publiques près de chez toi et rejoins de nouvelles personnes.",
     gradient: "from-primary/10 via-accent/10 to-transparent",
     size: "sm",
+    badge: "Zone pilote : Caen",
   },
   {
-    title: "Petits groupes",
-    description: "5-10 personnes max. Qualité > quantité. Zéro pression sociale.",
+    title: "Petits groupes de qualité",
+    description: "5-10 personnes max. Des rencontres authentiques, sans pression sociale.",
     gradient: "from-accent/10 via-primary/10 to-transparent",
     size: "lg",
+    badge: "Zone pilote : Caen",
   },
 ];
 
@@ -56,6 +60,14 @@ const BenefitsSection = () => {
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-gradient-to-br from-white/[0.03] to-transparent blur-2xl" />
               
               <div className="relative">
+                {/* Badge */}
+                <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium mb-3 ${
+                  benefit.badge === "Disponible partout" 
+                    ? "bg-accent/15 text-accent border border-accent/20" 
+                    : "bg-primary/15 text-primary border border-primary/20"
+                }`}>
+                  {benefit.badge}
+                </span>
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   {benefit.title}
                 </h3>

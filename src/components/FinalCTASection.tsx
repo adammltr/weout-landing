@@ -15,16 +15,16 @@ const FinalCTASection = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-5">
-            Rejoins la pré-bêta <span className="text-accent">avant tout le monde</span>.
+            Teste WeOut <span className="text-accent">en avant-première</span>.
           </h2>
           
           <p className="text-muted-foreground text-lg max-w-md mx-auto mb-4 leading-relaxed">
-            Accès limité. On ouvre progressivement pour garder une vraie expérience.
+            Plans privés disponibles partout. Découverte et rencontres en test à Caen.
           </p>
           
           <p className="text-sm text-foreground/70 mb-10 flex items-center justify-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            Premiers membres = retours directs avec l'équipe
+            Rejoins le Discord pour suivre l'évolution et donner ton avis
           </p>
 
           {/* Discord CTA Button */}

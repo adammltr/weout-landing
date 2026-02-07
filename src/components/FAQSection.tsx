@@ -7,24 +7,28 @@ import {
 
 const faqs = [
   {
+    question: "Qu'est-ce que je peux faire avec WeOut ?",
+    answer: "WeOut te permet d'organiser des sorties entre amis simplement. Tu crées un plan, tu invites qui tu veux, et c'est parti. Pas de friction, pas de discussions interminables.",
+  },
+  {
+    question: "C'est dispo où ?",
+    answer: "Les plans privés entre amis fonctionnent partout. Les fonctionnalités de découverte (plans semi-publics, rencontres) sont actuellement en test uniquement à Caen. On ouvre progressivement selon l'usage réel.",
+  },
+  {
     question: "C'est public ?",
-    answer: "Tu configures la visibilité de chaque sortie : amis proches uniquement, cercle élargi, ou ouverte aux gens autour de toi. Tu gardes le contrôle.",
+    answer: "Par défaut, tes sorties sont privées et visibles uniquement par les personnes que tu invites. À Caen, tu peux aussi créer des plans semi-publics pour rencontrer de nouvelles personnes.",
   },
   {
-    question: "Est-ce que mes amis voient tout ce que je fais ?",
-    answer: "Tu choisis qui voit quoi. Chaque sortie peut avoir une visibilité différente selon tes cercles.",
+    question: "Pourquoi Caen comme zone pilote ?",
+    answer: "On préfère tester en conditions réelles sur une zone concentrée avant de déployer plus large. Ça nous permet d'améliorer l'expérience sur des retours concrets.",
   },
   {
-    question: "C'est pour rencontrer des inconnus ?",
-    answer: "Tu peux rencontrer de nouvelles personnes si tu le souhaites, mais c'est toujours encadré : filtres, règles de visibilité, et contrôle de ton côté.",
+    question: "Quand est-ce que ça arrive dans ma ville ?",
+    answer: "L'expansion dépend de l'usage réel et des retours utilisateurs. Rejoins le Discord pour être informé des prochaines ouvertures.",
   },
   {
     question: "C'est gratuit ?",
     answer: "Oui, WeOut est gratuit. On ne vend pas tes données et il n'y a pas de pub.",
-  },
-  {
-    question: "C'est dispo où ?",
-    answer: "L'app s'ouvre progressivement là où il y a le plus de demande chez les bêta testeurs.",
   },
 ];
 

@@ -1,18 +1,18 @@
 const steps = [
   {
     number: "01",
-    title: "Tu déclares une envie",
-    description: "\"Chaud ciné ce soir\" — en 5 secondes, c'est posté.",
+    title: "Tu crées un plan",
+    description: "\"Ciné ce soir ?\" — en quelques secondes, c'est posté et partagé à tes amis.",
   },
   {
     number: "02",
-    title: "Tu vois qui est partant",
-    description: "Tes amis ou des gens proches répondent. Tu sais qui vient avant d'y aller.",
+    title: "Tes amis répondent",
+    description: "Tu vois qui est partant. Plus besoin de relancer 10 fois dans le groupe.",
   },
   {
     number: "03",
-    title: "Tu rejoins sans awkwardness",
-    description: "Petit groupe, intention claire. Zéro malaise.",
+    title: "Vous sortez",
+    description: "Le plan est clair, les gens sont motivés. Simple.",
   },
 ];
 
