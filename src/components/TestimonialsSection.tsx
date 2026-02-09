@@ -5,31 +5,37 @@ const testimonials = [
     name: "Léa",
     age: 21,
     text: "Ça évite les messages gênants dans le groupe. Tu sais direct qui est chaud.",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
   },
   {
     name: "Thomas",
     age: 19,
     text: "J'ai trouvé des gens chauds pour sortir sans forcer. Simple.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
   },
   {
     name: "Inès",
     age: 22,
     text: "Enfin une app sociale sans malaise. J'attends le lancement public.",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
   },
   {
     name: "Mathis",
     age: 20,
     text: "Je découvre des plans que j'aurais jamais connu sinon.",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
   },
   {
     name: "Chloé",
     age: 23,
     text: "Nouvelle dans ma ville. WeOut m'a aidé à rencontrer du monde.",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
   },
   {
     name: "Lucas",
     age: 18,
     text: "Plus besoin d'attendre que quelqu'un propose. Tu proposes, point.",
+    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face",
   },
 ];
 
@@ -103,11 +109,14 @@ const TestimonialsSection = () => {
             className="flex-shrink-0 w-80 p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/40 backdrop-blur-sm"
           >
             <div className="flex items-center gap-4 mb-5">
-              {/* Avatar placeholder - gradient circle */}
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 border border-border/50 flex items-center justify-center">
-                <span className="text-sm font-semibold text-foreground/80">
-                  {testimonial.name.charAt(0)}
-                </span>
+              {/* Real photo avatar */}
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-accent/30">
+                <img 
+                  src={testimonial.avatar} 
+                  alt={testimonial.name}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <div>
                 <p className="font-medium text-foreground">{testimonial.name}</p>
