@@ -1,7 +1,7 @@
 import weoutLogo from "@/assets/weout-logo-1.png";
 
-const INSTAGRAM_LINK = "https://www.instagram.com/weout.music";
-const TIKTOK_LINK = "https://www.tiktok.com/@synoutt";
+const INSTAGRAM_LINK = "https://www.instagram.com/weoutsocial";
+const TIKTOK_LINK = "https://www.tiktok.com/@weoutsocial";
 
 const Footer = () => {
   return (
