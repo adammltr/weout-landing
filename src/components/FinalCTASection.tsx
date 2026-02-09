@@ -43,13 +43,13 @@ const FinalCTASection = () => {
             Rejoindre la communauté Instagram
           </a>
           
-          {/* Secondary CTA - Discord */}
-          <div className="mt-4">
+          {/* Secondary CTA - Discord (styled pill button) */}
+          <div className="mt-5">
             <a
               href={DISCORD_INVITE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
+              className="group inline-flex items-center gap-2.5 px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full transition-all duration-300 ease-out hover:bg-secondary/80 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:ring-offset-2 focus:ring-offset-background border border-border/50"
             >
               <svg
                 className="w-4 h-4"
