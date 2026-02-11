@@ -1,36 +1,35 @@
 import socialSceneImage from "@/assets/social-scene.jpg";
+import appScreenshot from "@/assets/app-screenshot.png";
 
 const AppShowcaseSection = () => {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section className="relative py-28 md:py-40 overflow-hidden">
       {/* Large organic background shape */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Main organic blob */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[800px] bg-gradient-to-br from-accent/8 via-primary/6 to-transparent rounded-[50%] blur-3xl" />
-        {/* Secondary accent glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[900px] bg-gradient-to-br from-accent/8 via-primary/6 to-transparent rounded-[50%] blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-accent/15 to-transparent rounded-full blur-[100px]" />
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[80px]" />
       </div>
 
       <div className="container-wide relative z-10">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-4">
+        {/* Section header - more breathing */}
+        <div className="text-center mb-20 md:mb-28">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-6">
             L'expérience WeOut
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
             Là où les <span className="text-accent">plans</span> deviennent{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">réalité</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-md mx-auto">
             Plus qu'une app, une façon de vivre tes soirées.
           </p>
         </div>
 
         {/* Main visual layout: Phone mockup + Social scene */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
+        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
           
-          {/* Phone Mockup - Left side */}
+          {/* Phone Mockup - Left side with REAL screenshot */}
           <div className="relative z-20 lg:-mr-16 flex-shrink-0">
             {/* Phone frame */}
             <div className="relative w-[280px] md:w-[320px] h-[580px] md:h-[660px] rounded-[3rem] bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] p-2 shadow-2xl">
@@ -39,111 +38,17 @@ const AppShowcaseSection = () => {
                 {/* Dynamic Island / Notch */}
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-10" />
                 
-                {/* App Screen Content */}
-                <div className="relative w-full h-full pt-14 pb-6 px-4">
-                  {/* Status bar mock */}
-                  <div className="absolute top-2 left-6 right-6 flex justify-between items-center text-[10px] text-foreground/60">
-                    <span>21:42</span>
-                    <div className="flex gap-1.5 items-center">
-                      <div className="w-4 h-2 border border-foreground/40 rounded-sm">
-                        <div className="w-2/3 h-full bg-accent rounded-sm" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* App header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <p className="text-xs text-muted-foreground">Caen, France</p>
-                      <h3 className="text-lg font-bold">Ce soir</h3>
-                    </div>
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-accent to-primary" />
-                  </div>
-
-                  {/* Event cards */}
-                  <div className="space-y-3">
-                    {/* Event 1 */}
-                    <div className="p-3 rounded-2xl bg-card/80 border border-border/50 backdrop-blur-sm">
-                      <div className="flex items-start gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-lg">
-                          🎉
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-semibold text-sm truncate">Apéro rooftop</p>
-                          <p className="text-xs text-muted-foreground">Marie + 4 amis</p>
-                          <div className="flex items-center gap-1 mt-1">
-                            <span className="text-[10px] text-accent font-medium">20h30</span>
-                            <span className="text-[10px] text-muted-foreground">• Centre-ville</span>
-                          </div>
-                        </div>
-                        <div className="flex -space-x-2">
-                          <div className="w-6 h-6 rounded-full bg-primary/40 border-2 border-background" />
-                          <div className="w-6 h-6 rounded-full bg-accent/40 border-2 border-background" />
-                          <div className="w-6 h-6 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-[8px] font-medium">+3</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Event 2 */}
-                    <div className="p-3 rounded-2xl bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/30 backdrop-blur-sm">
-                      <div className="flex items-start gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/40 to-accent/40 flex items-center justify-center text-lg">
-                          🎵
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1.5">
-                            <p className="font-semibold text-sm truncate">Concert électro</p>
-                            <span className="px-1.5 py-0.5 rounded-full bg-accent/20 text-accent text-[8px] font-bold">HOT</span>
-                          </div>
-                          <p className="text-xs text-muted-foreground">Lucas organise</p>
-                          <div className="flex items-center gap-1 mt-1">
-                            <span className="text-[10px] text-accent font-medium">22h00</span>
-                            <span className="text-[10px] text-muted-foreground">• Le Cargo</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Quick action */}
-                    <div className="p-4 rounded-2xl border border-dashed border-border/60 flex items-center justify-center gap-2 text-muted-foreground hover:border-accent/50 hover:text-accent transition-colors cursor-pointer">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                      </svg>
-                      <span className="text-sm font-medium">Créer un plan</span>
-                    </div>
-                  </div>
-
-                  {/* Bottom nav mock */}
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-around items-center py-3 px-4 bg-card/60 backdrop-blur-lg rounded-2xl border border-border/30">
-                    <div className="flex flex-col items-center gap-0.5">
-                      <div className="w-6 h-6 rounded-lg bg-accent/20 flex items-center justify-center">
-                        <div className="w-3 h-3 bg-accent rounded-sm" />
-                      </div>
-                      <span className="text-[8px] text-accent font-medium">Feed</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-0.5 opacity-50">
-                      <div className="w-6 h-6 flex items-center justify-center">
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                      </div>
-                      <span className="text-[8px] font-medium">Explorer</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-0.5 opacity-50">
-                      <div className="w-6 h-6 flex items-center justify-center">
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                      </div>
-                      <span className="text-[8px] font-medium">Profil</span>
-                    </div>
-                  </div>
-                </div>
+                {/* Real App Screenshot */}
+                <img 
+                  src={appScreenshot} 
+                  alt="Interface réelle de l'application WeOut" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 
-            {/* Floating notification */}
-            <div className="absolute -right-4 top-32 md:-right-8 p-3 rounded-2xl bg-card/90 backdrop-blur-xl border border-border/50 shadow-xl animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            {/* Floating notification - stays above the phone */}
+            <div className="absolute -right-4 top-32 md:-right-8 p-3 rounded-2xl bg-card/90 backdrop-blur-xl border border-border/50 shadow-xl animate-fade-in z-30" style={{ animationDelay: "0.5s" }}>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
                   <span className="text-sm">✨</span>
@@ -158,9 +63,7 @@ const AppShowcaseSection = () => {
 
           {/* Social Scene Image - Right side */}
           <div className="relative lg:w-[55%] lg:-ml-8">
-            {/* Image container with creative mask */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              {/* Gradient overlay for blending */}
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10 lg:w-1/3" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30 z-10" />
               
@@ -190,14 +93,13 @@ const AppShowcaseSection = () => {
               </div>
             </div>
 
-            {/* Decorative elements */}
             <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-accent/10 blur-2xl" />
             <div className="absolute -bottom-4 right-1/4 w-24 h-24 rounded-full bg-primary/15 blur-xl" />
           </div>
         </div>
 
-        {/* Feature highlights below */}
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {/* Feature highlights below - more spacing */}
+        <div className="mt-20 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <div className="text-center p-6">
             <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 flex items-center justify-center">
               <svg className="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -216,7 +118,7 @@ const AppShowcaseSection = () => {
               </svg>
             </div>
             <h3 className="font-semibold text-lg mb-2">Cercles de confiance</h3>
-            <p className="text-sm text-muted-foreground">Sorties privées ou ouvertes, tu décides qui voit quoi.</p>
+            <p className="text-sm text-muted-foreground">Sorties privées ou ouvertes, tu décides qui vois quoi.</p>
           </div>
 
           <div className="text-center p-6">

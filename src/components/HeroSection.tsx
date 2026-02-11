@@ -64,7 +64,8 @@ const HeroSection = () => {
               href={DISCORD_INVITE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full transition-all duration-300 ease-out hover:bg-secondary/80 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:ring-offset-2 focus:ring-offset-background border border-border/50"
+              className="group inline-flex items-center gap-2.5 px-6 py-3 font-medium rounded-full transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background border border-primary/30 text-foreground/90"
+              style={{ background: "linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--accent) / 0.1), hsl(var(--primary) / 0.2))" }}
             >
               <svg
                 className="w-4 h-4"
