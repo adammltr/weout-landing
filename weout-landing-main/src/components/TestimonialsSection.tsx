@@ -81,19 +81,26 @@ const TestimonialsSection = () => {
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section className="section-spacing overflow-hidden relative">
+    <section
+      className="section-spacing overflow-hidden relative"
+      aria-labelledby="weout-community-heading"
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/40 via-muted/20 to-background pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-accent/5 blur-[150px]" />
       
-      <div className="container-narrow mb-12 relative z-10">
+      <div className="container-narrow mb-10 relative z-10">
         <div className="text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-4">
-            Retours bêta
+            Communauté WeOut
           </span>
-          <h2 className="section-title">
-            Ils testent <span className="text-accent">WeOut</span>.
+          <h2 id="weout-community-heading" className="section-title mb-3">
+            Ils sortent déjà avec <span className="text-accent">WeOut</span>.
           </h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
+            La bêta se construit avec des vrais étudiants, nouveaux dans leur ville ou juste
+            lassés des groupes WhatsApp morts.
+          </p>
         </div>
       </div>
 

@@ -34,7 +34,10 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section
+      className="section-spacing relative overflow-hidden"
+      aria-labelledby="weout-faq-heading"
+    >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
@@ -45,8 +48,9 @@ const FAQSection = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-4">
             FAQ
           </span>
-          <h2 className="section-title">
-            Questions <span className="text-accent">fréquentes</span>.
+          <h2 id="weout-faq-heading" className="section-title">
+            Questions fréquentes sur WeOut,{" "}
+            <span className="text-accent">les sorties et Caen</span>.
           </h2>
         </div>
 

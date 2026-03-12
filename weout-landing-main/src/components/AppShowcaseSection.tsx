@@ -4,25 +4,24 @@ import appScreenshot from "@/assets/app-screenshot.png";
 const AppShowcaseSection = () => {
   return (
     <section className="relative py-28 md:py-40 overflow-hidden">
-      {/* Large organic background shape */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[900px] bg-gradient-to-br from-accent/8 via-primary/6 to-transparent rounded-[50%] blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-accent/15 to-transparent rounded-full blur-[100px]" />
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[80px]" />
-      </div>
+      {/* Background kept subtle to let photography stand out */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-background via-muted/20 to-background" />
 
       <div className="container-wide relative z-10">
-        {/* Section header - more breathing */}
-        <div className="text-center mb-20 md:mb-28">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-6">
-            L'expérience WeOut
+        {/* Section header - moments réels */}
+        <div className="text-left md:text-center mb-16 md:mb-24">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-4">
+            Des moments qui n'existent pas sur ton feed
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
-            Là où les <span className="text-accent">plans</span> deviennent{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">réalité</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight max-w-2xl">
+            Des vraies soirées,{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              pas juste des stories.
+            </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Plus qu'une app, une façon de vivre tes soirées.
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl">
+            WeOut, c&apos;est les messages qui se transforment en terrasse, les DM en
+            soirées et les &quot;on se voit un jour&quot; en rendez-vous posés dans la ville.
           </p>
         </div>
 
@@ -39,10 +38,11 @@ const AppShowcaseSection = () => {
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-10" />
                 
                 {/* Real App Screenshot */}
-                <img 
-                  src={appScreenshot} 
-                  alt="Interface réelle de l'application WeOut" 
+                <img
+                  src={appScreenshot}
+                  alt="Interface réelle de l'application WeOut"
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -67,10 +67,11 @@ const AppShowcaseSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10 lg:w-1/3" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30 z-10" />
               
-              <img 
-                src={socialSceneImage} 
-                alt="Groupe d'amis qui s'amusent ensemble en soirée" 
+              <img
+                src={socialSceneImage}
+                alt="Groupe d'amis qui s'amusent ensemble en soirée"
                 className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                loading="lazy"
               />
 
               {/* Overlay content */}
@@ -83,11 +84,13 @@ const AppShowcaseSection = () => {
                       <div className="w-8 h-8 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-xs font-medium">+12</div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold">14 personnes rejoignent ce plan</p>
+                      <p className="text-sm font-semibold">
+                        14 personnes ont dit &quot;je viens&quot; ce soir
+                      </p>
                     </div>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Connecte-toi avec des gens qui partagent tes envies de sortir.
+                    Une app qui sert à sortir, pas à scroller. Tu vois qui est chaud, où et quand.
                   </p>
                 </div>
               </div>
@@ -98,37 +101,44 @@ const AppShowcaseSection = () => {
           </div>
         </div>
 
-        {/* Feature highlights below - more spacing */}
-        <div className="mt-20 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="text-center p-6">
-            <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 flex items-center justify-center">
-              <svg className="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
+        {/* Photo strip of real moments below */}
+        <div className="mt-16 md:mt-24">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            Moments de la ville
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="relative h-28 md:h-32 rounded-2xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=800&q=80&auto=format&fit=crop"
+                alt="Groupe d'amis sur une terrasse en ville"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Plans géolocalisés</h3>
-            <p className="text-sm text-muted-foreground">Découvre ce qui se passe près de toi, en temps réel.</p>
-          </div>
-
-          <div className="text-center p-6">
-            <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center">
-              <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-              </svg>
+            <div className="relative h-28 md:h-32 rounded-2xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1561489429-3543e2d4d4b4?w=800&q=80&auto=format&fit=crop"
+                alt="Bar animé avec verres et néons"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Cercles de confiance</h3>
-            <p className="text-sm text-muted-foreground">Sorties privées ou ouvertes, tu décides qui vois quoi.</p>
-          </div>
-
-          <div className="text-center p-6">
-            <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent/15 to-primary/15 border border-accent/20 flex items-center justify-center">
-              <svg className="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-              </svg>
+            <div className="relative h-28 md:h-32 rounded-2xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80&auto=format&fit=crop"
+                alt="Amis qui rient ensemble dans la rue"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Rencontres naturelles</h3>
-            <p className="text-sm text-muted-foreground">Finis les matchs qui mènent nulle part.</p>
+            <div className="relative h-28 md:h-32 rounded-2xl overflow-hidden hidden md:block">
+              <img
+                src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800&q=80&auto=format&fit=crop"
+                alt="Vue de rue nocturne avec lumières de ville"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>

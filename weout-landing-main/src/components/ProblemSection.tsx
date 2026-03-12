@@ -23,7 +23,10 @@ const problems = [
 
 const ProblemSection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section
+      className="section-spacing relative overflow-hidden"
+      aria-labelledby="weout-problem-heading"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-background to-background pointer-events-none" />
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px]" />
@@ -32,11 +35,11 @@ const ProblemSection = () => {
       <div className="container-narrow relative z-10">
         <div className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-4">
-            Le problème
+            Le problème quand tu veux sortir
           </span>
-          <h2 className="section-title">
-            Sortir devrait pas être<br />
-            <span className="text-muted-foreground">aussi compliqué.</span>
+          <h2 id="weout-problem-heading" className="section-title">
+            Sortir en ville avec des amis<br />
+            <span className="text-muted-foreground">ne devrait pas être aussi compliqué.</span>
           </h2>
         </div>
 

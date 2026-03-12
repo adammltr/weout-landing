@@ -31,7 +31,10 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section
+      className="section-spacing relative overflow-hidden"
+      aria-labelledby="weout-benefits-heading"
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[150px]" />
@@ -42,8 +45,9 @@ const BenefitsSection = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-4">
             Pourquoi WeOut
           </span>
-          <h2 className="section-title">
-            Social, mais <span className="text-accent">à ta façon</span>.
+          <h2 id="weout-benefits-heading" className="section-title">
+            L'app sociale pour sortir en ville,{" "}
+            <span className="text-accent">à ta façon</span>.
           </h2>
         </div>
 

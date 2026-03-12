@@ -3,7 +3,10 @@ const DISCORD_INVITE_LINK = "https://discord.gg/azSbYCFmS3";
 
 const FinalCTASection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section
+      className="section-spacing relative overflow-hidden"
+      aria-labelledby="weout-install-heading"
+    >
       {/* Rich background with gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-accent/10 to-primary/10 blur-[150px]" />
@@ -15,12 +18,14 @@ const FinalCTASection = () => {
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/60" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-5">
-            Fais partie de <span className="text-accent">l'aventure</span>.
+          <h2 id="weout-install-heading" className="text-3xl md:text-4xl font-bold mb-5">
+            Sois parmi les premiers à{" "}
+            <span className="text-accent">installer WeOut</span>.
           </h2>
           
           <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10 leading-relaxed">
-            Rejoins la communauté pour suivre l'avancement, donner ton avis et accéder à l'app en avant-première.
+            Rejoins la communauté, donne ton avis sur la bêta et reçois le lien d'installation dès
+            que l'app ouvre dans ta ville.
           </p>
 
           {/* Primary CTA - Instagram Community */}

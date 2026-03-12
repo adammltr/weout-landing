@@ -1,24 +1,29 @@
 const steps = [
   {
     number: "01",
-    title: "Tu crées un plan",
-    description: "\"Ciné ce soir ?\" — en quelques secondes, c'est posté et partagé à tes amis.",
+    title: "Tu installes WeOut",
+    description: "On t'envoie le lien d'installation via la communauté. Deux minutes, et c'est sur ton tel.",
   },
   {
     number: "02",
-    title: "Tes amis répondent",
-    description: "Tu vois qui est partant. Plus besoin de relancer 10 fois dans le groupe.",
+    title: "Tu lances un plan",
+    description:
+      "\"Apéro demain ?\", \"Basket au city ?\" — tu postes, tu choisis qui voit, et c'est tout.",
   },
   {
     number: "03",
-    title: "Vous sortez",
-    description: "Le plan est clair, les gens sont motivés. Simple.",
+    title: "Vous sortez pour de vrai",
+    description:
+      "Les réponses arrivent, tu sais qui vient, où et quand. Finis les groupes morts, place aux vraies soirées.",
   },
 ];
 
 const SolutionSection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section
+      className="section-spacing relative overflow-hidden"
+      aria-labelledby="weout-how-heading"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-0 w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px]" />
@@ -28,10 +33,11 @@ const SolutionSection = () => {
       <div className="container-narrow relative z-10">
         <div className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent mb-4">
-            Comment ça marche
+            Comment ça marche concrètement
           </span>
-          <h2 className="section-title">
-            3 étapes. <span className="text-accent">C'est tout.</span>
+          <h2 id="weout-how-heading" className="section-title">
+            3 actions pour passer{" "}
+            <span className="text-accent">de l'envie à la sortie</span>.
           </h2>
         </div>
 
